@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Морской бой</title>
+    <script src="game.js"></script>
+    <style>
+
+        #select-ship td {
+            width: 32px;
+            height: 32px;
+        }
+
+        .selected-line td {
+            background-color: red;
+        }
+
+        .field {
+            border: 1px solid green;
+        }
+
+        .field > table {
+            border-spacing: 0px;
+        }
+
+        .field > table  td {
+            width: 32px;
+            height:32px;
+            border: 1px solid #6796ff;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .miss {
+            background-color: #89aaff;
+        }
+
+        .friendly {
+            background-color: green;
+
+        }
+
+        .damaged {
+            background-color: #5d5d5d;
+        }
+
+        .dead {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="select-ship">
+
+</div>
+<div id="field1" class="field">
+    12312312
+</div>
+<div id="field2" class="field">
+    12312412421
+</div>
+<script>
+    const f1 = new Field(10, 10);
+    f1.draw(document.getElementById('field1'),true);
+
+    const f2 = new Field(10, 10);
+
+    f2.draw(document.getElementById('field2'),true);
+
+
+    const game = new Game(f1, f2);
+
+    drawSelectShipBlock();
+</script>
+</body>
+</html>
